@@ -795,6 +795,7 @@ fn invoke_rustc(builder: &SpirvBuilder) -> Result<PathBuf, SpirvBuilderError> {
     let profile = if builder.release { "release" } else { "dev" };
 
     let mut cargo = Command::new("cargo");
+    eprintln!("Found cargo: {:?}", cargo.get_program());
     cargo.args([
         "build",
         "--lib",
